@@ -18,8 +18,6 @@ public class EmployeesBO {
 	
 	private final PasswordEncoder passwordEncoder;
 	
-	
-
 	@Autowired
 	public EmployeesBO(PasswordEncoder passwordEncoder) {
 		super();

@@ -13,12 +13,6 @@ import com.kruger.employeevaccination.enumerations.EnumResponse;
 @Service
 public class CommonBO {
 
-   /* @Autowired
-    private JWTService jwtService;
-
-    public String obtenerUsuarioToken(Map<String, String> headers) {
-        return jwtService.getUsername(headers.get("Authorization"));
-    }*/
 
     public InfoResponse fillInfo(EnumResponse enumResponse) {
         InfoResponse infoResponse = new InfoResponse();

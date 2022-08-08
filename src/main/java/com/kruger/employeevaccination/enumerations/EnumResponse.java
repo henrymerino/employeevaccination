@@ -5,13 +5,10 @@ import lombok.Getter;
 
 @AllArgsConstructor
 public enum EnumResponse {
-    //2XX
     CORRECTO("000","Ok"),
-
 
     AUTH_CORRECTA("000", "Autenticación correcta."),
 
-    //4XX
     AUTH_ERROR("401","Error de autenticacion: username o password incorrecto."),
     INCORRECTO("450", "Error"),
     IDENTIFICATION_ERROR("451", "La Cedula ingresada es Incorrecta"),

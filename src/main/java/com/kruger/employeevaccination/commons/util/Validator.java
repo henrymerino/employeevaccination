@@ -11,23 +11,16 @@ public class Validator implements Serializable {
 
     private static Log LOG = LogFactory.getLog(Validator.class);
 
-    /***
-     * Metodo que permite validar el documento de identidad
-     *
-     * @param cedula parametro de entrada a ser validado
-     * @return un valor booleano
-     */
     public static boolean validatorIdentification(String cedula) {
         boolean cedulaCorrecta = false;
 
         try {
 
-            if (cedula.length() == 10) // ConstantesApp.LongitudCedula
+            if (cedula.length() == 10) 
             {
                 int tercerDigito = Integer.parseInt(cedula.substring(2, 3));
                 if (tercerDigito < 6) {
-                    // Coeficientes de validación cédula
-                    // El decimo digito se lo considera dígito verificador
+
                     int[] coefValCedula = { 2, 1, 2, 1, 2, 1, 2, 1, 2 };
                     int verificador = Integer.parseInt(cedula.substring(9, 10));
                     int suma = 0;

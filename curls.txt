@@ -1,0 +1,94 @@
+curl --request POST \
+  --url http://localhost:8080/api/login \
+  --header 'Content-Type: application/x-www-form-urlencoded' \
+  --cookie JSESSIONID=8EA21F44D07792DDA99361A689E0E685 \
+  --data username=arnold \
+  --data password=1234
+  
+  
+  curl --request GET \
+  --url http://localhost:8080/api/token/refresh \
+  --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcm5vbGQiLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9TVVBFUl9BRE1JTiIsIlJPTEVfVVNFUiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2xvZ2luIiwiZXhwIjoxNjU5ODk4Njk3fQ.1rsgM35Xswq8vxx4FXYzv21N7Tfw1X6U31Wgpp2spPk' \
+  --cookie JSESSIONID=8EA21F44D07792DDA99361A689E0E685
+  
+  
+  curl --request GET \
+  --url http://localhost:8080/api/users \
+  --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcm5vbGQiLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9FTVBMT1lFRSJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2xvZ2luIiwiZXhwIjoxNjU5OTgxNDE2fQ.9SHrS7MmxF-5_DAot7E_fHgKkLbY299uPLLp7nR_6S4' \
+  --cookie JSESSIONID=8EA21F44D07792DDA99361A689E0E685
+  
+  
+  curl --request POST \
+  --url http://localhost:8080/api/role/addroletouser \
+  --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcm5vbGQiLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9TVVBFUl9BRE1JTiIsIlJPTEVfVVNFUiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2xvZ2luIiwiZXhwIjoxNjU5OTExMzUxfQ.iRWFs-_f-5QPy1aABrbfdVj7yAxDv8U0oHf4yfAPsY0' \
+  --header 'Content-Type: application/json' \
+  --cookie JSESSIONID=8EA21F44D07792DDA99361A689E0E685 \
+  --data '{
+	"userName" : "will",
+	"roleName" : "ROLE_ADMIN"
+}'
+
+
+curl --request POST \
+  --url http://localhost:8080/api/employee/create \
+  --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcm5vbGQiLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9FTVBMT1lFRSJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2xvZ2luIiwiZXhwIjoxNjU5OTc1Njg4fQ.3yFgrERu9bCak_ij5H2UK58DXg4b6aAyaxY860mb7Uk' \
+  --header 'Content-Type: application/json' \
+  --cookie JSESSIONID=8EA21F44D07792DDA99361A689E0E685 \
+  --data '{
+	"identification" : "1713736872",
+	"firstname" : "Henry",
+	"lastname" : "Aguilar",
+	"email" : "h@gmail.com"
+}'
+
+
+curl --request PUT \
+  --url http://localhost:8080/api/employee/createvaccinated \
+  --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcm5vbGQiLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9FTVBMT1lFRSJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2xvZ2luIiwiZXhwIjoxNjU5OTc1NzEzfQ.K2GEBszVnzJJc6tMj9y9kMCtrDHL9UEY4MBr_4pMZJk' \
+  --header 'Content-Type: application/json' \
+  --cookie JSESSIONID=8EA21F44D07792DDA99361A689E0E685 \
+  --data '{
+	"identification" : "1713736872",
+	"firstname" : "Hnery",
+	"lastname" : "Aguilar",
+	"email" : "h@gmail.com",
+	"birthdate" : "1983-01-16",
+	"address" : "Carapungo",
+	"cellphone" : "0998026834",
+	"vaccinationStatus" : "true"
+	
+}'
+
+
+curl --request DELETE \
+  --url http://localhost:8080/api/employee/delete/1 \
+  --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcm5vbGQiLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9FTVBMT1lFRSJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2xvZ2luIiwiZXhwIjoxNjU5OTYyMDgzfQ.Gv-g3VbIRKfKFsD8ghrLimIjq7FkuJy_6ksl8ytR29k' \
+  --header 'Content-Type: application/json' \
+  --cookie JSESSIONID=8EA21F44D07792DDA99361A689E0E685
+  
+  
+  curl --request PATCH \
+  --url http://localhost:8080/api/employee/addinformation \
+  --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcm5vbGQiLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9FTVBMT1lFRSJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2xvZ2luIiwiZXhwIjoxNjU5OTcyOTUyfQ.gzZJM4TAiGfSHUJJOEJ7uQte62Ctku4MmmQZ1H2YSa8' \
+  --header 'Content-Type: application/json' \
+  --cookie JSESSIONID=8EA21F44D07792DDA99361A689E0E685 \
+  --data '{
+	"identification":"1713736872",
+	"birthdate" : "1983-01-16",
+	"address" : "Carapungo",
+	"cellphone" : "02222222",
+	"vaccinationStatus" : "true"
+}'
+
+
+curl --request POST \
+  --url http://localhost:8080/api/employees/vaccines \
+  --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcm5vbGQiLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9FTVBMT1lFRSJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2xvZ2luIiwiZXhwIjoxNjU5OTc1NzQyfQ.0cpwr5okUFIaUUma992a_DT8j5gkbsq3QnDlIG9J-qU' \
+  --header 'Content-Type: application/json' \
+  --cookie JSESSIONID=8EA21F44D07792DDA99361A689E0E685 \
+  --data '{
+	"identification":"1713736872",
+	"vaccine": "3",
+	"vaccination_date":"1983-01-16",
+	"number_doses": "1"
+}'
